@@ -1,0 +1,31 @@
+<script type="text/javascript">
+const scriptContent = `
+import RefreshRuntime from "http://localhost:3000/@react-refresh";
+RefreshRuntime.injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;
+window.__vite_plugin_react_preamble_installed__ = true;
+`;
+
+const scriptElement = document.createElement('script');
+scriptElement.type = 'module';
+scriptElement.textContent = scriptContent;
+
+document.body.appendChild(scriptElement);
+
+const script1 = document.createElement('script'); 
+script1.type = 'module'; 
+script1.src = 'http://localhost:3000/@vite/client'; 
+script1.onload = () => console.log('Script loaded and executed.'); document.body.appendChild(script1); 
+
+
+const script2 = document.createElement('script');
+script2.type = 'module';
+script2.src = 'http://localhost:3000/src/index.tsx';
+script2.onload = () => console.log('Script loaded and executed.');
+document.body.appendChild(script2);
+
+# Language: JS 
+Code Source: CODE 
+Insert: After Page Load 
+</script>
